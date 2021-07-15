@@ -17,9 +17,9 @@ const statsId = {
   contributes: "contribs"
 };
 
-app.get("/github-stats", async (req, res) => {
+app.get("/github-stats/:id", async (req, res) => {
   try {
-    const response = await axios.get("https://github-readme-stats.vercel.app/api?username=tanney-102");
+    const response = await axios.get(`https://github-readme-stats.vercel.app/api?username=${req.params.id}`);
     const githubStatsDOM = new JSDOM(response.data);
     const stats = Object.keys(statsId).reduce((acc, key) => ({
       ...acc,
