@@ -10,11 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 const statsId = { 
-  stars: "stars",
-  commits: "commits",
-  prs: "prs", 
-  issues: "issues",
-  contributes: "contribs"
+  starsCount: "stars",
+  commitsCount: "commits",
+  prsCount: "prs", 
+  issuesCount: "issues",
+  contributesCount: "contribs"
 };
 
 app.get("/github-stats/:id", async (req, res) => {
